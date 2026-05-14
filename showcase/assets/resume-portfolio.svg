@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Resume portfolio slide design preview">
+  <rect width="1280" height="720" fill="#F5F8FF"/>
+  <rect x="72" y="72" width="1136" height="576" fill="#FFFFFF" stroke="#D9E5FF"/>
+  <circle cx="184" cy="178" r="66" fill="#1F6BFF"/>
+  <text x="156" y="196" font-family="Arial, sans-serif" font-size="44" font-weight="700" fill="#FFFFFF">A</text>
+  <text x="286" y="154" font-family="Georgia, serif" font-size="48" font-weight="700" fill="#0B1F4D">Resume as a story,</text>
+  <text x="286" y="208" font-family="Georgia, serif" font-size="48" font-weight="700" fill="#0B1F4D">not a list.</text>
+  <text x="290" y="258" font-family="Arial, sans-serif" font-size="20" fill="#66779E">Positioning, proof, selected wins, and working style.</text>
+  <rect x="120" y="360" width="280" height="150" fill="#D9E5FF"/>
+  <text x="146" y="408" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#0B1F4D">Signature win</text>
+  <text x="146" y="452" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#1F6BFF">+32%</text>
+  <rect x="500" y="360" width="280" height="150" fill="#E7FFF7"/>
+  <text x="526" y="408" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#0B1F4D">Strength</text>
+  <text x="526" y="452" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#19C2A0">Systems thinking</text>
+  <rect x="880" y="360" width="280" height="150" fill="#FFF2D6"/>
+  <text x="906" y="408" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#0B1F4D">Next chapter</text>
+  <text x="906" y="452" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#D88B20">Team impact</text>
+</svg>

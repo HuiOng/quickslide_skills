@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Slide Storyteller Showcase</title>
+    <style>
+      :root {
+        --ink: #17212b;
+        --muted: #697384;
+        --paper: #fff9f0;
+        --line: #e3d8ca;
+        --mint: #63c7b2;
+        --coral: #f26d5b;
+        --dark: #233142;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #f3eadf;
+        color: var(--ink);
+        font-family: Inter, Aptos, "Avenir Next", Arial, sans-serif;
+      }
+
+      header {
+        padding: 56px clamp(24px, 5vw, 72px) 28px;
+      }
+
+      h1 {
+        max-width: 920px;
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(42px, 7vw, 84px);
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      .intro {
+        max-width: 760px;
+        margin: 22px 0 0;
+        color: var(--muted);
+        font-size: 19px;
+        line-height: 1.45;
+      }
+
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 28px;
+      }
+
+      .chip {
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.62);
+        padding: 10px 14px;
+        font-size: 13px;
+        font-weight: 750;
+      }
+
+      main {
+        padding: 12px clamp(24px, 5vw, 72px) 64px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid var(--line);
+        padding: 14px;
+      }
+
+      .preview {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        background: white;
+        border: 1px solid rgba(23, 33, 43, 0.08);
+      }
+
+      .meta {
+        display: grid;
+        gap: 8px;
+        padding: 16px 4px 2px;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 21px;
+        letter-spacing: 0;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .meta p {
+        color: var(--muted);
+        font-size: 14.5px;
+        line-height: 1.38;
+      }
+
+      .tag {
+        width: fit-content;
+        background: var(--dark);
+        color: white;
+        padding: 7px 10px;
+        font-size: 11px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .note {
+        margin-top: 26px;
+        padding: 20px 22px;
+        background: var(--dark);
+        color: white;
+        font-size: 17px;
+        line-height: 1.45;
+      }
+
+      .note strong {
+        color: #ffd166;
+      }
+
+      @media (max-width: 860px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          padding-top: 36px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Slide Storyteller can shift tone without losing clarity.</h1>
+      <p class="intro">
+        A small gallery of presentation directions for work updates, teaching, resumes, data stories, and creative explainers.
+        Each preview is intentionally editable-looking: strong claims, clear proof objects, and no heavy template clutter.
+      </p>
+      <div class="toolbar" aria-label="Design strengths">
+        <span class="chip">Editable PPTX-ready</span>
+        <span class="chip">Beginner friendly</span>
+        <span class="chip">Work-safe cute art</span>
+        <span class="chip">Story-first layouts</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="grid" aria-label="Design showcase">
+        <article class="card">
+          <img class="preview" src="./assets/executive-brief.svg" alt="Executive brief slide preview" />
+          <div class="meta">
+            <span class="tag">Leadership</span>
+            <h2>Executive Brief</h2>
+            <p>Best for a manager, leadership update, decision ask, or strategy recommendation.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="preview" src="./assets/cute-learning.svg" alt="Cute learning slide preview" />
+          <div class="meta">
+            <span class="tag">Training</span>
+            <h2>Cute Learning</h2>
+            <p>Friendly enough for beginners, restrained enough for a workplace learning session.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="preview" src="./assets/data-story.svg" alt="Data story slide preview" />
+          <div class="meta">
+            <span class="tag">Analytics</span>
+            <h2>Data Story</h2>
+            <p>For metric narratives where charts should prove a point, not just decorate a page.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="preview" src="./assets/resume-portfolio.svg" alt="Resume portfolio slide preview" />
+          <div class="meta">
+            <span class="tag">Career</span>
+            <h2>Resume Portfolio</h2>
+            <p>Turns experience into positioning, proof, signature wins, and a clear next chapter.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="preview" src="./assets/weekly-update.svg" alt="Weekly update slide preview" />
+          <div class="meta">
+            <span class="tag">Operating</span>
+            <h2>Weekly Update</h2>
+            <p>Compact, scannable status reporting for bosses, team syncs, and casual progress reviews.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="preview" src="./assets/storybook-explainer.svg" alt="Storybook explainer slide preview" />
+          <div class="meta">
+            <span class="tag">Creative</span>
+            <h2>Storybook Explainer</h2>
+            <p>For workshops and storytelling where the audience needs a simple visual journey.</p>
+          </div>
+        </article>
+      </section>
+
+      <p class="note">
+        <strong>Sharing note:</strong> this is good enough for an initial GitHub release as a clear prototype.
+        Before a wider launch, add one real before/after deck example and a short install/use section.
+      </p>
+    </main>
+  </body>
+</html>

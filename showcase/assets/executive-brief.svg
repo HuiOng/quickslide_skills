@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Executive brief slide design preview">
+  <rect width="1280" height="720" fill="#F7F2EA"/>
+  <path d="M70 96h12v12H70z" fill="#176B87"/>
+  <text x="96" y="106" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#687386">EXECUTIVE BRIEF</text>
+  <text x="70" y="178" font-family="Georgia, serif" font-size="54" font-weight="700" fill="#101827">One clear recommendation,</text>
+  <text x="70" y="238" font-family="Georgia, serif" font-size="54" font-weight="700" fill="#101827">backed by visible evidence.</text>
+  <rect x="74" y="330" width="424" height="230" fill="#FFFFFF" stroke="#DED3C5"/>
+  <text x="102" y="382" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#101827">Decision needed</text>
+  <text x="102" y="424" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#176B87">Approve pilot rollout</text>
+  <text x="102" y="470" font-family="Arial, sans-serif" font-size="18" fill="#687386">Scope is small, risk is bounded,</text>
+  <text x="102" y="498" font-family="Arial, sans-serif" font-size="18" fill="#687386">and learning value is high.</text>
+  <rect x="590" y="318" width="560" height="18" fill="#E6DED2"/>
+  <rect x="590" y="318" width="438" height="18" fill="#176B87"/>
+  <rect x="590" y="388" width="560" height="18" fill="#E6DED2"/>
+  <rect x="590" y="388" width="318" height="18" fill="#C47F2C"/>
+  <rect x="590" y="458" width="560" height="18" fill="#E6DED2"/>
+  <rect x="590" y="458" width="490" height="18" fill="#101827"/>
+  <text x="590" y="292" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#101827">Evidence snapshot</text>
+  <text x="70" y="666" font-family="Arial, sans-serif" font-size="12" fill="#687386">Slide Storyteller design direction</text>
+</svg>

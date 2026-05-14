@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Storybook explainer slide design preview">
+  <rect width="1280" height="720" fill="#FFF5F1"/>
+  <path d="M92 520 C230 390 340 430 460 300 S680 190 830 320 1030 500 1190 368" fill="none" stroke="#FF5A3D" stroke-width="8"/>
+  <circle cx="218" cy="442" r="48" fill="#FFB000"/>
+  <circle cx="542" cy="258" r="48" fill="#33CC70"/>
+  <circle cx="842" cy="326" r="48" fill="#6FA8DC"/>
+  <circle cx="1080" cy="440" r="48" fill="#B8A6FF"/>
+  <text x="76" y="142" font-family="Georgia, serif" font-size="56" font-weight="700" fill="#24120E">Turn abstract ideas</text>
+  <text x="76" y="204" font-family="Georgia, serif" font-size="56" font-weight="700" fill="#24120E">into a journey.</text>
+  <text x="82" y="262" font-family="Arial, sans-serif" font-size="22" fill="#745F58">Hook, character, problem, mechanism, payoff.</text>
+  <rect x="80" y="578" width="260" height="48" fill="#FFFFFF" stroke="#FFD8CD"/>
+  <text x="110" y="609" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#24120E">Creative explainers</text>
+  <rect x="380" y="578" width="260" height="48" fill="#FFFFFF" stroke="#FFD8CD"/>
+  <text x="410" y="609" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#24120E">Training stories</text>
+  <rect x="680" y="578" width="260" height="48" fill="#FFFFFF" stroke="#FFD8CD"/>
+  <text x="710" y="609" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#24120E">Playful workshops</text>
+</svg>

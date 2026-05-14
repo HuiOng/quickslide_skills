@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Weekly update slide design preview">
+  <rect width="1280" height="720" fill="#F6FAF7"/>
+  <text x="74" y="118" font-family="Georgia, serif" font-size="52" font-weight="700" fill="#09231E">This week moved the project</text>
+  <text x="74" y="178" font-family="Georgia, serif" font-size="52" font-weight="700" fill="#09231E">from planning to proof.</text>
+  <rect x="82" y="270" width="330" height="256" fill="#FFFFFF" stroke="#DDF5DA"/>
+  <text x="112" y="318" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1F7A52">Progress</text>
+  <text x="112" y="374" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#09231E">3 shipped</text>
+  <text x="112" y="420" font-family="Arial, sans-serif" font-size="18" fill="#60736D">Prototype, QA notes, demo flow.</text>
+  <rect x="475" y="270" width="330" height="256" fill="#FFFFFF" stroke="#DDF5DA"/>
+  <text x="505" y="318" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#C88A1A">Watch</text>
+  <text x="505" y="374" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#09231E">1 blocker</text>
+  <text x="505" y="420" font-family="Arial, sans-serif" font-size="18" fill="#60736D">Waiting for source data.</text>
+  <rect x="868" y="270" width="330" height="256" fill="#09231E"/>
+  <text x="898" y="318" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#86ED78">Next</text>
+  <text x="898" y="374" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#FFFFFF">Demo ready</text>
+  <text x="898" y="420" font-family="Arial, sans-serif" font-size="18" fill="#DDF5DA">Share with boss on Friday.</text>
+  <text x="82" y="620" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#09231E">Best for boss updates and team syncs.</text>
+</svg>
