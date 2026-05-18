@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Monthly Update | AI Skills, Agents, and Mockups</title>
+    <style>
+      :root {
+        --leaf: #477b5f;
+        --deep-leaf: #23483a;
+        --sage: #dfeadb;
+        --mint: #eef7ee;
+        --sky: #d9edf5;
+        --sun: #ffe8a8;
+        --petal: #f7c7bb;
+        --peach: #fff4e6;
+        --paper: #fffdf8;
+        --ink: #1f2d2a;
+        --muted: #65756f;
+        --line: rgba(71, 123, 95, 0.2);
+        --white: #ffffff;
+        --shadow: 0 24px 70px rgba(52, 83, 68, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+      }
+
+      body {
+        margin: 0;
+        background:
+          radial-gradient(circle at 10% 8%, rgba(255, 232, 168, 0.72), transparent 24rem),
+          radial-gradient(circle at 95% 10%, rgba(247, 199, 187, 0.52), transparent 26rem),
+          linear-gradient(180deg, #fbfff8 0%, #fffaf0 52%, #f6fbf4 100%);
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        line-height: 1.45;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .deck-nav {
+        position: fixed;
+        top: 22px;
+        right: 24px;
+        z-index: 10;
+        display: flex;
+        gap: 7px;
+        padding: 8px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(18px);
+      }
+
+      .deck-nav a {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(71, 123, 95, 0.28);
+        text-indent: -999px;
+        overflow: hidden;
+      }
+
+      .deck-nav a:hover {
+        background: var(--leaf);
+      }
+
+      .slide {
+        position: relative;
+        display: grid;
+        min-height: 100vh;
+        scroll-snap-align: start;
+        place-items: center;
+        padding: 64px clamp(22px, 4vw, 64px);
+      }
+
+      .frame {
+        position: relative;
+        overflow: hidden;
+        width: min(1280px, 100%);
+        min-height: min(720px, calc(100vh - 80px));
+        border: 1px solid var(--line);
+        border-radius: 30px;
+        background: rgba(255, 253, 248, 0.88);
+        box-shadow: var(--shadow);
+      }
+
+      .frame::before,
+      .frame::after {
+        position: absolute;
+        content: "";
+        border-radius: 999px;
+        pointer-events: none;
+      }
+
+      .frame::before {
+        width: 280px;
+        height: 280px;
+        right: -88px;
+        top: -120px;
+        background: rgba(255, 232, 168, 0.56);
+      }
+
+      .frame::after {
+        width: 220px;
+        height: 220px;
+        left: -90px;
+        bottom: -96px;
+        background: rgba(217, 237, 245, 0.72);
+      }
+
+      .content {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        min-height: min(720px, calc(100vh - 80px));
+        padding: clamp(34px, 5vw, 70px);
+      }
+
+      .slide-kicker {
+        margin: 0 0 18px;
+        color: var(--leaf);
+        font-size: 13px;
+        font-weight: 850;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2 {
+        margin: 0;
+        color: var(--deep-leaf);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 700;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        max-width: 980px;
+        font-size: clamp(48px, 7vw, 94px);
+        line-height: 0.96;
+      }
+
+      h2 {
+        max-width: 980px;
+        font-size: clamp(38px, 5vw, 70px);
+        line-height: 1;
+      }
+
+      .lead {
+        max-width: 820px;
+        margin: 28px 0 0;
+        color: #3f514b;
+        font-size: clamp(20px, 2.1vw, 28px);
+        line-height: 1.35;
+      }
+
+      .foot {
+        position: absolute;
+        right: clamp(30px, 5vw, 70px);
+        bottom: 28px;
+        left: clamp(30px, 5vw, 70px);
+        z-index: 2;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr) 340px;
+        gap: 48px;
+        align-items: center;
+      }
+
+      .garden-mark {
+        display: grid;
+        min-height: 360px;
+        place-items: center;
+      }
+
+      .garden-mark svg {
+        width: 100%;
+        max-width: 340px;
+      }
+
+      .two-col {
+        grid-template-columns: minmax(0, 0.94fr) minmax(300px, 0.56fr);
+        gap: clamp(28px, 5vw, 64px);
+        align-items: center;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 34px;
+      }
+
+      .card,
+      .panel,
+      .step,
+      .risk {
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.72);
+        box-shadow: 0 14px 40px rgba(52, 83, 68, 0.08);
+      }
+
+      .card {
+        min-height: 178px;
+        padding: 24px;
+      }
+
+      .card strong,
+      .panel strong,
+      .step strong,
+      .risk strong {
+        display: block;
+        color: var(--deep-leaf);
+        font-size: 20px;
+        line-height: 1.18;
+      }
+
+      .card span,
+      .panel span,
+      .step span,
+      .risk span {
+        display: block;
+        margin-top: 10px;
+        color: var(--muted);
+      }
+
+      .tag {
+        display: inline-flex;
+        width: fit-content;
+        margin-bottom: 16px;
+        border: 1px solid rgba(71, 123, 95, 0.18);
+        border-radius: 999px;
+        padding: 7px 11px;
+        background: var(--mint);
+        color: var(--leaf);
+        font-size: 12px;
+        font-weight: 850;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+      }
+
+      .diagram {
+        display: grid;
+        gap: 14px;
+      }
+
+      .step {
+        display: grid;
+        grid-template-columns: 52px minmax(0, 1fr);
+        gap: 16px;
+        align-items: start;
+        padding: 18px;
+      }
+
+      .number {
+        display: grid;
+        width: 52px;
+        height: 52px;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--deep-leaf);
+        color: var(--sun);
+        font-family: Georgia, serif;
+        font-size: 22px;
+        font-weight: 800;
+      }
+
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 36px;
+      }
+
+      .flow-item {
+        position: relative;
+        min-height: 142px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 18px;
+        background: rgba(255, 255, 255, 0.76);
+      }
+
+      .flow-item:not(:last-child)::after {
+        position: absolute;
+        top: 50%;
+        right: -12px;
+        content: "";
+        width: 12px;
+        height: 2px;
+        background: var(--leaf);
+      }
+
+      .flow-item strong {
+        display: block;
+        color: var(--deep-leaf);
+        font-size: 16px;
+      }
+
+      .flow-item span {
+        display: block;
+        margin-top: 9px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .matrix {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin-top: 32px;
+      }
+
+      .panel {
+        padding: 28px;
+      }
+
+      .panel.skill {
+        background: linear-gradient(140deg, rgba(238, 247, 238, 0.9), rgba(255, 255, 255, 0.78));
+      }
+
+      .panel.agent {
+        background: linear-gradient(140deg, rgba(217, 237, 245, 0.9), rgba(255, 255, 255, 0.78));
+      }
+
+      .artifact-wall {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 18px;
+        margin-top: 32px;
+      }
+
+      .mockup {
+        min-height: 330px;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 18px;
+        background: var(--white);
+      }
+
+      .mock-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--petal);
+      }
+
+      .dot:nth-child(2) {
+        background: var(--sun);
+      }
+
+      .dot:nth-child(3) {
+        background: var(--sage);
+      }
+
+      .mock-body {
+        display: grid;
+        grid-template-columns: 0.65fr 1fr;
+        gap: 16px;
+        padding-top: 18px;
+      }
+
+      .mock-line {
+        height: 16px;
+        border-radius: 999px;
+        background: var(--sage);
+      }
+
+      .mock-line.short {
+        width: 64%;
+      }
+
+      .mock-box {
+        min-height: 166px;
+        border-radius: 18px;
+        background:
+          radial-gradient(circle at 24% 24%, rgba(255, 232, 168, 0.82), transparent 62px),
+          linear-gradient(135deg, var(--mint), var(--sky));
+      }
+
+      .risk-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 34px;
+      }
+
+      .risk {
+        padding: 24px;
+      }
+
+      .ask-band {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 280px;
+        gap: 32px;
+        align-items: end;
+        border-radius: 28px;
+        padding: clamp(28px, 5vw, 54px);
+        background: linear-gradient(120deg, var(--deep-leaf), var(--leaf));
+        color: var(--white);
+      }
+
+      .ask-band h2 {
+        color: var(--white);
+      }
+
+      .ask-band .lead {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .ask-card {
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 22px;
+        padding: 24px;
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      .ask-card strong {
+        display: block;
+        color: var(--sun);
+        font-size: 44px;
+        line-height: 1;
+      }
+
+      .ask-card span {
+        display: block;
+        margin-top: 10px;
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      @media (max-width: 980px) {
+        html {
+          scroll-snap-type: none;
+        }
+
+        .slide {
+          min-height: auto;
+          padding: 34px 16px;
+        }
+
+        .frame,
+        .content {
+          min-height: auto;
+        }
+
+        .hero-grid,
+        .two-col,
+        .artifact-wall,
+        .ask-band,
+        .mock-body {
+          grid-template-columns: 1fr;
+        }
+
+        .cards,
+        .risk-list,
+        .flow,
+        .matrix {
+          grid-template-columns: 1fr;
+        }
+
+        .flow-item:not(:last-child)::after {
+          display: none;
+        }
+
+        .deck-nav {
+          display: none;
+        }
+      }
+
+      @media print {
+        html {
+          scroll-snap-type: none;
+        }
+
+        body {
+          background: var(--paper);
+        }
+
+        .deck-nav {
+          display: none;
+        }
+
+        .slide {
+          min-height: 100vh;
+          page-break-after: always;
+        }
+
+        .frame {
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="deck-nav" aria-label="Slide navigation">
+      <a href="#slide-1">1</a>
+      <a href="#slide-2">2</a>
+      <a href="#slide-3">3</a>
+      <a href="#slide-4">4</a>
+      <a href="#slide-5">5</a>
+      <a href="#slide-6">6</a>
+      <a href="#slide-7">7</a>
+      <a href="#slide-8">8</a>
+    </nav>
+
+    <main>
+      <section id="slide-1" class="slide" aria-label="Opening">
+        <div class="frame">
+          <div class="content hero-grid">
+            <div>
+              <p class="slide-kicker">Monthly manager update</p>
+              <h1>My AI exploration is becoming a repeatable delivery system.</h1>
+              <p class="lead">
+                This month I explored how to use AI to create skills, shape agents, draft PRDs,
+                and build quick mockups. The biggest lesson: the quality depends on planning and
+                standards before generation starts.
+              </p>
+            </div>
+            <div class="garden-mark" aria-hidden="true">
+              <svg viewBox="0 0 360 420">
+                <circle cx="282" cy="78" r="42" fill="#ffe8a8" />
+                <path d="M92 350c30-102 90-174 184-218 24-12 52 8 50 36-8 104-94 190-234 182Z" fill="#dfeadb" />
+                <path d="M118 352c28-86 86-154 172-206" fill="none" stroke="#477b5f" stroke-width="10" stroke-linecap="round" />
+                <path d="M168 244c-38-16-68-12-90 12 34 20 64 18 90-12Z" fill="#f7c7bb" />
+                <path d="M224 194c-8-38 2-66 30-84 12 36 2 66-30 84Z" fill="#a7d8c1" />
+                <path d="M278 174c34-22 64-24 88-6-28 28-58 30-88 6Z" fill="#ffd8b1" />
+                <circle cx="178" cy="110" r="34" fill="#f7c7bb" />
+                <circle cx="222" cy="82" r="24" fill="#a7d8c1" />
+                <circle cx="260" cy="122" r="30" fill="#ffd8b1" />
+                <circle cx="218" cy="126" r="22" fill="#477b5f" />
+              </svg>
+            </div>
+          </div>
+          <div class="foot"><span>AI skills, agents, PRDs, mockups</span><span>01 / 08</span></div>
+        </div>
+      </section>
+
+      <section id="slide-2" class="slide" aria-label="What I explored">
+        <div class="frame">
+          <div class="content">
+            <div>
+              <p class="slide-kicker">Progress this month</p>
+              <h2>I moved from trying prompts to understanding the operating model.</h2>
+              <p class="lead">
+                The exploration covered three practical outputs: reusable skills, agent-style
+                workflows, and lightweight mockups that help clarify requirements before engineering.
+              </p>
+              <div class="cards">
+                <article class="card">
+                  <span class="tag">Skill</span>
+                  <strong>Standardize repeatable judgment</strong>
+                  <span>Capture preferred standards, formats, examples, and validation checks so the same work can be repeated.</span>
+                </article>
+                <article class="card">
+                  <span class="tag">Agent</span>
+                  <strong>Execute a defined workflow</strong>
+                  <span>Use a clearer goal, tools, and decision path so AI can act through steps instead of only answering.</span>
+                </article>
+                <article class="card">
+                  <span class="tag">Mockup</span>
+                  <strong>Make requirements visible</strong>
+                  <span>Use HTML mockups to test structure, copy, and handoff quality before anything becomes expensive.</span>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="foot"><span>Claim: experimentation now has shape</span><span>02 / 08</span></div>
+        </div>
+      </section>
+
+      <section id="slide-3" class="slide" aria-label="Core insight">
+        <div class="frame">
+          <div class="content two-col">
+            <div>
+              <p class="slide-kicker">Core insight</p>
+              <h2>AI is strongest when I plan with it before asking it to build.</h2>
+              <p class="lead">
+                I cannot just go along the way. I need a full idea of what I want to build,
+                clear requirements, and a shared standard before generation begins.
+              </p>
+            </div>
+            <div class="diagram">
+              <article class="step">
+                <div class="number">1</div>
+                <div><strong>Clarify intent</strong><span>Who is this for, what decision should it support, and what does good look like?</span></div>
+              </article>
+              <article class="step">
+                <div class="number">2</div>
+                <div><strong>Define standards</strong><span>Reusable structure, design quality, evidence, acceptance criteria, and verification.</span></div>
+              </article>
+              <article class="step">
+                <div class="number">3</div>
+                <div><strong>Generate with traceability</strong><span>Connect requirements to PRD, user stories, mockup, and engineering handover.</span></div>
+              </article>
+            </div>
+          </div>
+          <div class="foot"><span>Claim: planning is part of the AI workflow</span><span>03 / 08</span></div>
+        </div>
+      </section>
+
+      <section id="slide-4" class="slide" aria-label="Operating model">
+        <div class="frame">
+          <div class="content">
+            <div>
+              <p class="slide-kicker">Emerging operating model</p>
+              <h2>The future workflow should connect strategy to handover without losing context.</h2>
+              <p class="lead">
+                The aim is not only to generate output faster. It is to preserve intent from the
+                first idea through to user stories and a simple mockup engineers can discuss.
+              </p>
+              <div class="flow" aria-label="AI delivery workflow">
+                <div class="flow-item"><strong>1. Explore</strong><span>Frame problem, users, and constraints with AI.</span></div>
+                <div class="flow-item"><strong>2. Standardize</strong><span>Turn recurring rules into a skill or agent pattern.</span></div>
+                <div class="flow-item"><strong>3. Plan</strong><span>Agree scope, assumptions, risks, and success measures.</span></div>
+                <div class="flow-item"><strong>4. PRD</strong><span>Generate a product brief with linked requirements.</span></div>
+                <div class="flow-item"><strong>5. Stories</strong><span>Map PRD needs into user stories and acceptance criteria.</span></div>
+                <div class="flow-item"><strong>6. Mockup</strong><span>Create a simple HTML prototype for handover.</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="foot"><span>Claim: traceability beats isolated outputs</span><span>04 / 08</span></div>
+        </div>
+      </section>
+
+      <section id="slide-5" class="slide" aria-label="Skill or agent decision">
+        <div class="frame">
+          <div class="content">
+            <div>
+              <p class="slide-kicker">Standardization decision</p>
+              <h2>I am learning when to make a skill, and when to make an agent.</h2>
+              <p class="lead">
+                The distinction matters because the reusable asset should match the type of work:
+                knowledge standard, execution workflow, or a combination of both.
+              </p>
+              <div class="matrix">
+                <article class="panel skill">
+                  <span class="tag">Make a skill when...</span>
+                  <strong>The problem is repeated judgment.</strong>
+                  <span>Examples: preferred design standards, PRD structure, writing style, evidence checklist, output quality bar, reusable deck patterns.</span>
+                </article>
+                <article class="panel agent">
+                  <span class="tag">Make an agent when...</span>
+                  <strong>The problem is repeated action.</strong>
+                  <span>Examples: gather context, ask clarifying questions, draft PRD, generate stories, create mockup, validate output, prepare handover.</span>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="foot"><span>Claim: form follows workflow</span><span>05 / 08</span></div>
+        </div>
+      </section>
+
+      <section id="slide-6" class="slide" aria-label="PRD to mockup handover">
+        <div class="frame">
+          <div class="content">
+            <div>
+              <p class="slide-kicker">Mockup and handover</p>
+              <h2>The mockup is useful because it exposes unclear requirements early.</h2>
+              <p class="lead">
+                HTML mockups help me check the information architecture, user flow, page states,
+                and handover assumptions before asking engineers to build.
+              </p>
+              <div class="artifact-wall">
+                <div class="mockup" aria-label="Simplified mockup illustration">
+                  <div class="mock-header">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </div>
+                  <div class="mock-body">
+                    <div>
+                      <div class="mock-line"></div>
+                      <br />
+                      <div class="mock-line short"></div>
+                      <br />
+                      <div class="mock-line"></div>
+                      <br />
+                      <div class="mock-line short"></div>
+                    </div>
+                    <div class="mock-box"></div>
+                  </div>
+                </div>
+                <div class="diagram">
+                  <article class="step">
+                    <div class="number">A</div>
+                    <div><strong>PRD</strong><span>Purpose, scope, user needs, constraints, success measures.</span></div>
+                  </article>
+                  <article class="step">
+                    <div class="number">B</div>
+                    <div><strong>User stories</strong><span>Trace each feature to a user goal and acceptance criteria.</span></div>
+                  </article>
+                  <article class="step">
+                    <div class="number">C</div>
+                    <div><strong>Mockup</strong><span>Show screens, content hierarchy, states, and open questions.</span></div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="foot"><span>Claim: visible requirements reduce rework</span><span>06 / 08</span></div>
+        </div>
+      </section>
+
+      <section id="slide-7" class="slide" aria-label="Risks and guardrails">
+        <div class="frame">
+          <div class="content">
+            <div>
+              <p class="slide-kicker">Risks and guardrails</p>
+              <h2>The main risk is not AI output quality. It is unclear ownership of standards.</h2>
+              <p class="lead">
+                To make this useful at work, each workflow needs a clear quality bar, validation
+                method, and decision owner before it is reused.
+              </p>
+              <div class="risk-list">
+                <article class="risk">
+                  <span class="tag">Risk</span>
+                  <strong>Going straight to output</strong>
+                  <span>Guardrail: start with problem framing, assumptions, and acceptance criteria.</span>
+                </article>
+                <article class="risk">
+                  <span class="tag">Risk</span>
+                  <strong>Reusable standards become vague</strong>
+                  <span>Guardrail: define examples, anti-examples, and validation checks inside the skill.</span>
+                </article>
+                <article class="risk">
+                  <span class="tag">Risk</span>
+                  <strong>Mockup looks final but is not aligned</strong>
+                  <span>Guardrail: treat mockups as discussion artifacts tied back to user stories.</span>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="foot"><span>Claim: governance can be lightweight but explicit</span><span>07 / 08</span></div>
+        </div>
+      </section>
+
+      <section id="slide-8" class="slide" aria-label="Next month plan">
+        <div class="frame">
+          <div class="content">
+            <div class="ask-band">
+              <div>
+                <p class="slide-kicker" style="color: #ffe8a8">Next month plan</p>
+                <h2>Pick one real workflow and turn it into a reusable AI-assisted delivery pattern.</h2>
+                <p class="lead">
+                  Proposed focus: choose one internal use case, define the standard, co-plan with AI,
+                  generate a PRD linked to user stories, and produce a simple HTML mockup for
+                  engineering review.
+                </p>
+              </div>
+              <aside class="ask-card">
+                <strong>Ask</strong>
+                <span>Align on one pilot use case and the quality standard we want to test.</span>
+              </aside>
+            </div>
+          </div>
+          <div class="foot"><span>Claim: one pilot will test the full loop</span><span>08 / 08</span></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

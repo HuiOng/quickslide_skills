@@ -1,17 +1,17 @@
 ---
 name: slide-storyteller
-description: Create polished, editable presentation decks for work updates, resumes, portfolio stories, leadership narratives, casual weekly updates, and visual storytelling. Use when the user asks Codex to make slides, improve a deck, turn notes into a presentation, create a cute or illustrated slide style, generate clip art for slides, or package a story into PowerPoint/PPTX for business or personal use.
+description: Create polished story-first HTML portfolios, presentation drafts, and editable slide decks for work updates, resumes, portfolio stories, leadership narratives, casual weekly updates, and visual storytelling. Use when the user asks Codex to make a resume portfolio, visual story, HTML presentation, slides, improve a deck, turn notes into a presentation, create a cute or illustrated style, generate clip art for slides, or package a story into PowerPoint/PPTX for business or personal use.
 ---
 
 # Slide Storyteller
 
 ## Operating Standard
 
-Create slides that feel intentional, useful, and human. Optimize for a clear story, credible evidence, and a tasteful visual system before decoration.
+Create story artifacts that feel intentional, useful, and human. Optimize for a clear story, credible evidence, and a tasteful visual system before decoration.
 
 For final PPTX generation, use the installed `Presentations` skill and its artifact-tool workflow when available. This skill supplies the storytelling, deck-type routing, art direction, and critique standard that should guide that build.
 
-Default to delivering an actual `.pptx` file when the user asks for slides, a deck, PowerPoint, or something to share at work. Do not stop at an outline, HTML mockup, slide modules, or instructions for conversion unless the user explicitly asks for those instead.
+Default to delivering a polished HTML artifact first when the user asks for a resume portfolio, visual story, presentation draft, or broad storytelling deliverable and does not explicitly request PowerPoint. Generate PowerPoint/PPTX only when the user asks for slides, a deck, PowerPoint, PPTX, or a file to present in PowerPoint. After delivering HTML, offer to continue into PowerPoint if a deck version would be useful.
 
 Use image generation for original cute art, spot illustrations, friendly icons, stickers, characters, scene backgrounds, or metaphor visuals when they improve the deck. Do not invent or redraw official logos, mascots, screenshots, product marks, or brand identity assets; use verified or user-provided assets for those.
 
@@ -25,27 +25,43 @@ Capture:
 
 - audience and decision-maker
 - deck purpose: inform, persuade, update, apply, sell, teach, or celebrate
-- desired format: PPTX, PDF, images, or outline
+- desired format: HTML, PPTX, PDF, images, or outline
+- default format: HTML first unless the user explicitly asks for PPTX, PowerPoint, slides, or a deck file
 - tone: executive, warm, playful, editorial, analytical, cute, bold, calm
 - source material: notes, metrics, resume, screenshots, links, previous decks
 - constraints: brand, length, deadline, confidentiality, must-include items
 
 ## Workflow
 
-1. Route the deck using `references/deck-patterns.md`.
+1. Route the story using `references/deck-patterns.md`.
 2. Write a one-sentence promise for the deck: what the audience should believe, understand, or do after viewing it.
 3. Build a claim spine: one sharp claim per slide, not topic labels.
 4. Choose a design system and slide format library. Use `references/design-systems-and-formats.md` for professional styles, timelines, roadmaps, diagrams, comic panels, data stories, and source-library guidance.
 5. Create a slide plan with title, claim, proof object, slide format, visual treatment, and speaker intent for each slide.
 6. Generate or gather assets. For cute art, follow `references/art-direction.md`. For third-party templates, icons, illustrations, or photos, verify license terms and add a credits slide when required.
-7. Build editable slides, render previews, and critique the deck at thumbnail size and full size.
-8. Export the deck to a real `.pptx` file.
-9. Verify the `.pptx` exists, is non-empty, and contains the expected number of slides.
-10. Iterate weak slides before final delivery.
+7. Build the requested artifact. Default to one polished, self-contained HTML file for portfolios, visual stories, and presentation drafts unless the user requested PPTX.
+8. For HTML, verify the file exists, parses, has responsive layout rules, and contains no placeholder text.
+9. For PPTX, export a real `.pptx` file and verify it exists, is non-empty, and contains the expected number of slides.
+10. Iterate weak sections or slides before final delivery.
+
+## HTML-First Delivery Rules
+
+For beginner-friendly portfolio and story delivery, Codex should create a usable HTML artifact before proposing PowerPoint.
+
+- Produce a final `.html` file with a useful filename, such as `resume-portfolio.html`.
+- Put the final file in an obvious `output/` folder or the user-requested folder.
+- Keep it self-contained when practical: inline CSS, inline SVG, semantic HTML, no fragile external dependencies.
+- Design it like a presentation story: hero, claim spine, proof sections, timeline or case studies, credentials, and closing.
+- Verify the file with local checks before responding:
+  - file exists and size is greater than zero
+  - HTML parses without obvious syntax errors
+  - no `TODO`, `Lorem`, or placeholder copy remains unless deliberately marked for user replacement
+- In the final response, give the exact `.html` path first.
+- Ask whether the user wants to continue into PPTX only after the HTML is delivered, unless the user already requested PPTX.
 
 ## PPTX Delivery Rules
 
-For beginner-friendly delivery, Codex must do the conversion/export work itself.
+Generate PPTX only when the user explicitly asks for PowerPoint, slides, a deck, PPTX, or a presentation file. For beginner-friendly delivery, Codex must do the conversion/export work itself.
 
 - Produce a final PowerPoint file with a useful filename, such as `ai-coding-for-beginners.pptx`.
 - Put the final file in an obvious `output/` folder or the user-requested folder.
@@ -120,5 +136,12 @@ When delivering a deck, include:
 - what type of deck was created
 - verification performed, especially file type and slide count
 - key assumptions made, only if important
+
+When delivering HTML, include:
+
+- final `.html` file path first
+- what type of story or portfolio was created
+- verification performed, especially parse and placeholder checks
+- a short note that PPTX can be generated next if useful
 
 Keep the response short and useful.

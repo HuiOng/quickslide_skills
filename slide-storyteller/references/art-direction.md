@@ -9,6 +9,7 @@ Choose one style family per deck:
 - soft editorial: warm ink lines, muted color, gentle texture, premium workplace feel
 - cheerful sticker: rounded shapes, clean outlines, bright accents, sparse shadows
 - cozy notebook: hand-drawn lines, paper texture, margin doodles, personal update feel
+- summer garden professional: light canvas, sage greens, sunlight accents, sparse botanical shapes, polished personal-brand feel
 - polished product cartoon: simplified people, crisp vector-like shapes, modern SaaS feel
 - storybook-lite: charming scenes and characters, restrained enough for adult audiences
 
@@ -27,6 +28,10 @@ For generated images, specify:
 Example prompt:
 
 `A small friendly desk calendar character holding a checklist, cheerful sticker illustration, clean rounded shapes, coral and teal accents, transparent background, no text, suitable for a professional weekly update slide.`
+
+Summer garden example:
+
+`A sparse botanical spot illustration with soft leaf stems and two abstract petal shapes, summer garden professional style, sage green, pale sky, sunlight yellow, warm paper background, airy editorial composition, no text, suitable for a resume portfolio hero.`
 
 ## Professional Guardrails
 

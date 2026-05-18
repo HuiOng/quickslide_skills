@@ -1,6 +1,6 @@
 interface:
   display_name: "Slide Storyteller"
-  short_description: "Polished decks with story and art"
-  default_prompt: "Use $slide-storyteller to create a polished editable deck from my notes, with a clear story and tasteful visuals."
+  short_description: "Story-first HTML and decks"
+  default_prompt: "Use $slide-storyteller to create a polished HTML portfolio or presentation draft from my notes, with a clear story and tasteful visuals."
 policy:
   allow_implicit_invocation: true

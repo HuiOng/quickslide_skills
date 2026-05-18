@@ -10,6 +10,7 @@ Pick one primary system and one optional accent system. Do not mix many styles i
 |---|---|---|---|
 | Modern executive | strategy, leadership, investment, board-style updates | white or near-white canvas, strict grid, one accent color, dense but calm charts, precise labels | decorative blobs, vague icons, oversized quote slides |
 | Google/Material-inspired | product, tech, workflow, training, internal tools | clean cards, Material Symbols-style icons, Google-like blue/red/yellow/green accents used sparingly, strong spacing, simple diagrams | copying Google brand identity, multicolor decoration without meaning |
+| Summer garden professional | resume portfolios, personal websites, warm leadership stories, friendly training | light canvas, sage/leaf greens, pale sky, soft sunlight, restrained petal accents, botanical SVG shapes, airy editorial spacing | beige-only palettes, childish flowers, cluttered borders, low-contrast pastel text |
 | High-end editorial | portfolio, keynote, thought leadership, founder story | large type, strong image crops, magazine-like pacing, generous margins, few words | tiny captions, busy charts, template-looking sections |
 | Graphic poster | campaigns, creative concepts, launch narratives | bold blocks, geometric shapes, strong contrast, one hero visual per slide, expressive section dividers | low-contrast text, random shapes, overfilled slides |
 | Comic storyboard | beginner education, playful explainers, process stories | panels, speech/thought bubbles, sequential beats, recurring original character, clean line art | dense data, childish tone for serious audiences, fake brand characters |
@@ -67,6 +68,31 @@ Do not:
 - Use color semantically: status, category, stage, or emphasis. Avoid random rainbow palettes.
 - Use diagrams as editable shapes, not screenshots, unless the source artifact itself must be shown.
 - Add a credits slide when third-party templates, icons, photos, or illustrations require attribution.
+
+## Summer Garden Professional
+
+Use this direction when the user asks for light colors, summer, flowers, nature, warm but professional, soft personal branding, or a resume/portfolio that should feel approachable.
+
+Palette:
+
+- leaf: `#477b5f`
+- deep leaf: `#23483a`
+- sage: `#dfeadb`
+- mint: `#eef7ee`
+- pale sky: `#d9edf5`
+- sunlight: `#ffe8a8`
+- petal: `#f7c7bb`
+- peach paper: `#fff4e6`
+- warm paper: `#fffdf8`
+
+Layout rules:
+
+- Use a light canvas with generous whitespace and editorial typography.
+- Use botanical shapes as a supporting motif: leaves, stems, soft petals, growth arcs, garden-map lines.
+- Keep flowers abstract and sparse so the design reads professional, not decorative stationery.
+- Pair a serif headline with a clean sans-serif body when the story is personal or portfolio-oriented.
+- Use sage/leaf for structure, sunlight for emphasis, petal only for warmth, and sky/mint for calm section backgrounds.
+- Good formats: resume hero, timeline, case-study cards, credential wall, leadership story, portfolio proof blocks, closing statement.
 
 ## Quick Source Search Prompts
 

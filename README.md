@@ -1,8 +1,8 @@
 # Slide Storyteller
 
-`slide-storyteller` is a Codex skill for creating polished, editable slide decks for work updates, beginner training, resumes, portfolio stories, leadership narratives, and playful visual explainers.
+`slide-storyteller` is a Codex skill for creating polished HTML presentation drafts and editable slide decks for work updates, beginner training, resumes, portfolio stories, leadership narratives, and playful visual explainers.
 
-It is designed for people who want the final output, not a conversion chore. When you ask for a deck, the skill tells Codex to produce a real `.pptx`, verify it, and give you the file path first.
+It is designed for people who want the final output, not a conversion chore. For broad storytelling and portfolio requests, the skill now defaults to a real HTML artifact first. When you explicitly ask for PowerPoint, it tells Codex to produce a real `.pptx`, verify it, and give you the file path first.
 
 ## Why This Exists
 
@@ -11,9 +11,9 @@ Most AI slide attempts stop at an outline, a script, or a rough mockup. This ski
 - understand the audience and goal
 - write slide claims instead of topic labels
 - choose a visual system
-- build editable slides
-- export an actual PowerPoint file
-- verify the deck before handing it back
+- build polished HTML presentation drafts by default
+- export an actual PowerPoint file when requested
+- verify the artifact before handing it back
 
 ## Install
 
@@ -35,6 +35,16 @@ Use $slide-storyteller to create a 7-slide beginner training deck about using Co
 This skill works best in Codex with access to the Presentations plugin/runtime. The skill can help with structure and story anywhere, but actual `.pptx` export depends on presentation tooling being available in the Codex environment.
 
 ## Sample Deck Output
+
+### HTML-first monthly update
+
+This HTML example shows the skill's newer default behavior: build a polished presentation draft first, then continue to PowerPoint only if requested.
+
+- [Monthly AI Skills Update HTML](examples/monthly-ai-skills-update/index.html)
+
+![Monthly AI skills update cover slide](examples/monthly-ai-skills-update/previews/slide-01.png)
+
+### PowerPoint example
 
 A real generated deck is included to show that the skill can produce an actual PowerPoint file, not just an outline:
 
