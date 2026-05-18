@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Google Material inspired roadmap slide design preview">
+  <rect width="1280" height="720" fill="#F8FAFD"/>
+  <text x="72" y="102" font-family="Arial, sans-serif" font-size="14" font-weight="800" fill="#5F6368">MATERIAL-INSPIRED ROADMAP</text>
+  <text x="72" y="162" font-family="Arial, sans-serif" font-size="48" font-weight="800" fill="#202124">Three releases, one visible path.</text>
+  <rect x="72" y="226" width="1136" height="360" rx="24" fill="#FFFFFF" stroke="#DADCE0"/>
+  <path d="M172 405h880" stroke="#DADCE0" stroke-width="8" stroke-linecap="round"/>
+  <g font-family="Arial, sans-serif">
+    <g transform="translate(172 318)">
+      <circle cx="0" cy="87" r="28" fill="#1A73E8"/>
+      <text x="-54" y="22" font-size="18" font-weight="800" fill="#202124">Now</text>
+      <text x="-54" y="148" font-size="16" fill="#5F6368">Foundation</text>
+    </g>
+    <g transform="translate(462 318)">
+      <circle cx="0" cy="87" r="28" fill="#34A853"/>
+      <text x="-58" y="22" font-size="18" font-weight="800" fill="#202124">Next</text>
+      <text x="-58" y="148" font-size="16" fill="#5F6368">Workflow</text>
+    </g>
+    <g transform="translate(752 318)">
+      <circle cx="0" cy="87" r="28" fill="#FBBC04"/>
+      <text x="-64" y="22" font-size="18" font-weight="800" fill="#202124">Later</text>
+      <text x="-64" y="148" font-size="16" fill="#5F6368">Automation</text>
+    </g>
+    <g transform="translate(1042 318)">
+      <circle cx="0" cy="87" r="28" fill="#EA4335"/>
+      <text x="-72" y="22" font-size="18" font-weight="800" fill="#202124">Measure</text>
+      <text x="-72" y="148" font-size="16" fill="#5F6368">Adoption</text>
+    </g>
+  </g>
+  <rect x="92" y="606" width="262" height="44" rx="22" fill="#E8F0FE"/>
+  <text x="116" y="634" font-family="Arial, sans-serif" font-size="17" font-weight="800" fill="#1A73E8">clean cards + semantic color</text>
+</svg>

@@ -15,6 +15,8 @@ Default to delivering an actual `.pptx` file when the user asks for slides, a de
 
 Use image generation for original cute art, spot illustrations, friendly icons, stickers, characters, scene backgrounds, or metaphor visuals when they improve the deck. Do not invent or redraw official logos, mascots, screenshots, product marks, or brand identity assets; use verified or user-provided assets for those.
 
+When the user asks for better design, more professional slides, comic style, modern/high-end style, Google/Material style, infographics, timelines, roadmaps, or richer formatting, read `references/design-systems-and-formats.md` before planning layouts.
+
 ## Intake
 
 Ask only for missing facts that would materially change the deck. If the user gives a broad request, proceed with reasonable assumptions and state them briefly.
@@ -33,9 +35,9 @@ Capture:
 1. Route the deck using `references/deck-patterns.md`.
 2. Write a one-sentence promise for the deck: what the audience should believe, understand, or do after viewing it.
 3. Build a claim spine: one sharp claim per slide, not topic labels.
-4. Choose a design system: typography mood, color palette, layout rhythm, chart grammar, illustration style, and visual density.
-5. Create a slide plan with title, claim, proof object, visual treatment, and speaker intent for each slide.
-6. Generate or gather assets. For cute art, follow `references/art-direction.md`.
+4. Choose a design system and slide format library. Use `references/design-systems-and-formats.md` for professional styles, timelines, roadmaps, diagrams, comic panels, data stories, and source-library guidance.
+5. Create a slide plan with title, claim, proof object, slide format, visual treatment, and speaker intent for each slide.
+6. Generate or gather assets. For cute art, follow `references/art-direction.md`. For third-party templates, icons, illustrations, or photos, verify license terms and add a credits slide when required.
 7. Build editable slides, render previews, and critique the deck at thumbnail size and full size.
 8. Export the deck to a real `.pptx` file.
 9. Verify the `.pptx` exists, is non-empty, and contains the expected number of slides.
@@ -70,6 +72,7 @@ The deck should pass three checks:
 - thumbnail check: the deck has variety and a coherent visual rhythm
 - boss check: the point is obvious in ten seconds
 - editability check: text, shapes, charts, and layout remain practical to revise
+- license check: third-party assets and templates are either user-provided, original, public/open-license, or credited according to their terms
 
 ## Deck Archetypes
 
@@ -80,6 +83,14 @@ Use `references/deck-patterns.md` when choosing structure. Common starting point
 - resume or portfolio: positioning, proof, selected wins, working style, next role
 - executive narrative: market shift, strategic bet, operating model, milestones, asks
 - playful explainer: hook, analogy, steps, example, takeaway
+
+Use `references/design-systems-and-formats.md` when choosing visual systems and slide formats. Common format needs:
+
+- timeline or roadmap: milestones, history, launch plan, implementation phases
+- graphical explainer: process, system map, flywheel, hierarchy, journey map
+- comic or storyboard: beginner teaching, scenario walkthrough, playful narrative
+- data story: annotated chart, small multiples, KPI shift, before/after metric
+- Google/Material-inspired deck: product, tech, workflow, or internal training
 
 ## Art Direction
 

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Comic storyboard slide design preview">
+  <rect width="1280" height="720" fill="#FFF7E8"/>
+  <text x="74" y="102" font-family="Arial, sans-serif" font-size="14" font-weight="800" fill="#E64B3C">COMIC STORYBOARD</text>
+  <text x="74" y="166" font-family="Arial, sans-serif" font-size="54" font-weight="800" fill="#151A22">A confusing workflow becomes a story.</text>
+  <g stroke="#151A22" stroke-width="5" fill="#FFFFFF">
+    <rect x="78" y="238" width="330" height="294"/>
+    <rect x="474" y="238" width="330" height="294"/>
+    <rect x="870" y="238" width="330" height="294"/>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#151A22">
+    <text x="106" y="286" font-size="22" font-weight="800">1. The blocker</text>
+    <text x="502" y="286" font-size="22" font-weight="800">2. The prompt</text>
+    <text x="898" y="286" font-size="22" font-weight="800">3. The payoff</text>
+  </g>
+  <g transform="translate(126 326)">
+    <circle cx="70" cy="54" r="42" fill="#FFD166" stroke="#151A22" stroke-width="5"/>
+    <path d="M42 48h18m22 0h18M52 80q18 14 36 0" fill="none" stroke="#151A22" stroke-width="5"/>
+    <rect x="138" y="12" width="112" height="68" rx="10" fill="#F2F4F7" stroke="#151A22" stroke-width="4"/>
+    <text x="150" y="55" font-family="Arial, sans-serif" font-size="19" font-weight="800" fill="#151A22">Too vague</text>
+  </g>
+  <g transform="translate(520 326)">
+    <rect x="0" y="0" width="236" height="116" rx="18" fill="#D7F2EA" stroke="#151A22" stroke-width="5"/>
+    <text x="26" y="46" font-family="Arial, sans-serif" font-size="20" font-weight="800" fill="#151A22">Goal + context</text>
+    <text x="26" y="82" font-family="Arial, sans-serif" font-size="20" font-weight="800" fill="#151A22">+ constraints</text>
+  </g>
+  <g transform="translate(930 328)">
+    <rect x="0" y="20" width="210" height="110" fill="#151A22"/>
+    <rect x="24" y="0" width="210" height="110" fill="#79B8FF" stroke="#151A22" stroke-width="5"/>
+    <path d="M72 56h112M72 86h78" stroke="#151A22" stroke-width="7"/>
+    <circle cx="52" cy="56" r="9" fill="#E64B3C"/>
+    <circle cx="52" cy="86" r="9" fill="#FFD166"/>
+  </g>
+  <text x="78" y="634" font-family="Arial, sans-serif" font-size="26" font-weight="800" fill="#151A22">Best for beginner training, product walkthroughs, and scenario-based explainers.</text>
+</svg>

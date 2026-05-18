@@ -34,21 +34,41 @@ Use $slide-storyteller to create a 7-slide beginner training deck about using Co
 
 This skill works best in Codex with access to the Presentations plugin/runtime. The skill can help with structure and story anywhere, but actual `.pptx` export depends on presentation tooling being available in the Codex environment.
 
-## Example Output
+## Sample Deck Output
 
-A real generated example is included:
+A real generated deck is included to show that the skill can produce an actual PowerPoint file, not just an outline:
 
 - [AI Coding for Beginners PPTX](examples/ai-coding-for-beginners/ai-coding-for-beginners.pptx)
 
-Preview slides:
+These previews are sample slide content from that beginner training deck. They are not the design format library.
 
-| Cover | Five Questions | Starter Prompt |
+| Cover Slide | Lesson Framework | Worked Example |
 |---|---|---|
-| ![AI coding deck cover](examples/ai-coding-for-beginners/previews/slide-01.png) | ![Five questions slide](examples/ai-coding-for-beginners/previews/slide-03.png) | ![Starter prompt slide](examples/ai-coding-for-beginners/previews/slide-07.png) |
+| ![AI coding deck cover](examples/ai-coding-for-beginners/previews/slide-01.png) | ![Lesson framework slide](examples/ai-coding-for-beginners/previews/slide-03.png) | ![Worked example slide](examples/ai-coding-for-beginners/previews/slide-07.png) |
 
-## Design Range
+## Design Intelligence
+
+The skill now separates slide design into two decisions: the visual system and the slide format. That means Codex should choose whether a slide needs a timeline, journey map, comic panel, annotated chart, decision matrix, roadmap, process flow, or case-study proof object before making it pretty.
+
+Supported visual directions include:
+
+- modern executive and high-end editorial
+- Google/Material-inspired product and training decks
+- comic storyboard and cute professional explainers
+- data newsroom and analytics readouts
+- graphic poster, workshop canvas, roadmap, and timeline-heavy decks
+
+The design and source guidance lives in [design-systems-and-formats.md](slide-storyteller/references/design-systems-and-formats.md).
 
 These lightweight previews show the kinds of deck styles the skill is meant to guide.
+
+| Material Roadmap | Comic Storyboard |
+|---|---|
+| ![Material roadmap slide preview](showcase/assets/material-roadmap.svg) | ![Comic storyboard slide preview](showcase/assets/comic-storyboard.svg) |
+
+| High-End Editorial | Modern Data Product |
+|---|---|
+| ![High-end editorial slide preview](showcase/assets/high-end-editorial.svg) | ![Modern product data slide preview](showcase/assets/modern-data-product.svg) |
 
 | Executive Brief | Cute Learning |
 |---|---|
@@ -83,6 +103,7 @@ Use $slide-storyteller to create a playful onboarding deck that teaches non-tech
 - [slide-storyteller/SKILL.md](slide-storyteller/SKILL.md): main Codex instructions
 - [deck-patterns.md](slide-storyteller/references/deck-patterns.md): reusable deck structures
 - [art-direction.md](slide-storyteller/references/art-direction.md): guidance for cute but professional art
+- [design-systems-and-formats.md](slide-storyteller/references/design-systems-and-formats.md): professional design systems, slide formats, and free-source guidance
 - [showcase/index.html](showcase/index.html): design gallery
 
 ## Project Status
@@ -106,6 +127,7 @@ Not yet perfect:
 ## Recommended Next Improvements
 
 - Add more real `.pptx` examples.
+- Add richer before/after examples for modern, comic, Google/Material, and executive decks.
 - Add a short video or GIF walkthrough.
 - Add a troubleshooting section for environments without PPTX export.
 - Add optional company brand template examples.

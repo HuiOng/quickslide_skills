@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Modern product data story slide design preview">
+  <rect width="1280" height="720" fill="#F6F7F9"/>
+  <text x="72" y="96" font-family="Arial, sans-serif" font-size="14" font-weight="800" fill="#586174">MODERN PRODUCT DATA</text>
+  <text x="72" y="158" font-family="Arial, sans-serif" font-size="48" font-weight="800" fill="#111827">Retention improved after the workflow got shorter.</text>
+  <rect x="72" y="222" width="516" height="356" rx="10" fill="#FFFFFF" stroke="#DFE3EA"/>
+  <rect x="640" y="222" width="568" height="356" rx="10" fill="#FFFFFF" stroke="#DFE3EA"/>
+  <text x="110" y="280" font-family="Arial, sans-serif" font-size="18" font-weight="800" fill="#111827">Activation funnel</text>
+  <g transform="translate(118 328)">
+    <rect x="0" y="0" width="382" height="34" fill="#DCE3EA"/>
+    <rect x="0" y="66" width="312" height="34" fill="#BFD4FF"/>
+    <rect x="0" y="132" width="232" height="34" fill="#6C8EF5"/>
+    <rect x="0" y="198" width="176" height="34" fill="#13294B"/>
+    <text x="404" y="25" font-family="Arial, sans-serif" font-size="17" font-weight="800" fill="#111827">100%</text>
+    <text x="334" y="91" font-family="Arial, sans-serif" font-size="17" font-weight="800" fill="#111827">82%</text>
+    <text x="254" y="157" font-family="Arial, sans-serif" font-size="17" font-weight="800" fill="#111827">61%</text>
+    <text x="198" y="223" font-family="Arial, sans-serif" font-size="17" font-weight="800" fill="#111827">46%</text>
+  </g>
+  <text x="680" y="280" font-family="Arial, sans-serif" font-size="18" font-weight="800" fill="#111827">What changed</text>
+  <g font-family="Arial, sans-serif" fill="#111827">
+    <rect x="684" y="326" width="112" height="112" rx="10" fill="#EAF4EF"/>
+    <text x="716" y="390" font-size="34" font-weight="800">-3</text>
+    <text x="826" y="368" font-size="22" font-weight="800">Steps removed</text>
+    <text x="826" y="404" font-size="17" fill="#586174">fewer decisions before setup</text>
+    <rect x="684" y="470" width="112" height="72" rx="10" fill="#FFF2CC"/>
+    <text x="716" y="518" font-size="28" font-weight="800">+18%</text>
+    <text x="826" y="506" font-size="22" font-weight="800">Week-two return</text>
+  </g>
+</svg>

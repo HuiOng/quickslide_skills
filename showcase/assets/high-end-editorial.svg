@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="High-end editorial slide design preview">
+  <rect width="1280" height="720" fill="#FAFAF7"/>
+  <rect x="760" y="0" width="520" height="720" fill="#111827"/>
+  <rect x="820" y="86" width="310" height="460" fill="#D8C8A8"/>
+  <rect x="860" y="126" width="310" height="460" fill="#F4EFE7" stroke="#111827" stroke-width="2"/>
+  <path d="M900 500c76-148 164-166 228-68" fill="none" stroke="#9D5C48" stroke-width="16"/>
+  <circle cx="1016" cy="300" r="72" fill="#3C7A89"/>
+  <text x="70" y="96" font-family="Arial, sans-serif" font-size="13" font-weight="800" fill="#9D5C48">HIGH-END EDITORIAL</text>
+  <text x="70" y="196" font-family="Georgia, serif" font-size="64" font-weight="700" fill="#111827">Make the claim</text>
+  <text x="70" y="268" font-family="Georgia, serif" font-size="64" font-weight="700" fill="#111827">feel inevitable.</text>
+  <text x="74" y="350" font-family="Arial, sans-serif" font-size="22" fill="#56616F">Large type, disciplined pacing, and one visual object that carries the story.</text>
+  <line x1="74" y1="430" x2="550" y2="430" stroke="#111827" stroke-width="3"/>
+  <text x="74" y="488" font-family="Arial, sans-serif" font-size="17" font-weight="800" fill="#111827">Portfolio • founder story • keynote • leadership narrative</text>
+</svg>
