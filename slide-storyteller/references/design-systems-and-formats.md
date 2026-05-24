@@ -58,6 +58,13 @@ Do not:
 - imitate a brand deck so closely that it looks official without permission
 - use flattened template screenshots when editable PPTX shapes are possible
 
+Current useful leads, verified May 2026:
+
+- Slidesgo `Comic Style Infographics` is a free template for Google Slides and PowerPoint with editable comic-style charts, maps, tables, timelines, mockups, icons, fonts, colors, and credits. Free users must keep attribution/credits. Start at `https://slidesgo.com/theme/comic-style-infographics`.
+- Figma's template gallery and resource library are good entry points for startup pitch deck inspiration, including pitch deck examples and Figma Community templates. Start at `https://www.figma.com/templates/`, `https://www.figma.com/presentation-maker/`, and `https://www.figma.com/resource-library/pitch-deck-examples/`.
+- Hypermatic's `Free Startup Deck Figma Presentation Template` is free for personal and commercial use and designed for its Pitchdeck Figma plugin export path. Start at `https://www.hypermatic.com/templates/presentations/startup/`.
+- Third-party reposts of Figma pitch deck templates, such as Figma Elements, UI4Free, Behance, or VIP Graphics, can be useful discovery leads but require extra license checks because terms may differ from the original Figma Community file.
+
 ## Formatting Rules That Make Decks Feel Professional
 
 - Establish a 12-column or 8-column grid and align every major object to it.
