@@ -17,6 +17,10 @@ Use image generation for original cute art, spot illustrations, friendly icons, 
 
 When the user asks for better design, more professional slides, comic style, modern/high-end style, Google/Material style, infographics, timelines, roadmaps, or richer formatting, read `references/design-systems-and-formats.md` before planning layouts.
 
+When creating monthly updates, 1-on-1 manager updates, personal growth updates, or gentle feedback decks, read `references/manager-1on1-updates.md` before planning the slide spine.
+
+When a real deck exercise reveals a reusable lesson about story structure, formatting variety, visual hierarchy, alignment, spacing, responsiveness, privacy, or verification, update this skill or the relevant reference before finishing if the user has asked for skill improvement or ongoing skill learning. Generalize the learning. Do not add the user's real project names, outcomes, teammate details, customer names, internal systems, or exact examples to public skill documentation.
+
 ## Intake
 
 Ask only for missing facts that would materially change the deck. If the user gives a broad request, proceed with reasonable assumptions and state them briefly.
@@ -35,14 +39,19 @@ Capture:
 
 1. Route the story using `references/deck-patterns.md`.
 2. Write a one-sentence promise for the deck: what the audience should believe, understand, or do after viewing it.
-3. Build a claim spine: one sharp claim per slide, not topic labels.
-4. Choose a design system and slide format library. Use `references/design-systems-and-formats.md` for professional styles, timelines, roadmaps, diagrams, comic panels, data stories, and source-library guidance.
-5. Create a slide plan with title, claim, proof object, slide format, visual treatment, and speaker intent for each slide.
-6. Generate or gather assets. For cute art, follow `references/art-direction.md`. For third-party templates, icons, illustrations, or photos, verify license terms and add a credits slide when required.
-7. Build the requested artifact. Default to one polished, self-contained HTML file for portfolios, visual stories, and presentation drafts unless the user requested PPTX.
-8. For HTML, verify the file exists, parses, has responsive layout rules, and contains no placeholder text.
-9. For PPTX, export a real `.pptx` file and verify it exists, is non-empty, and contains the expected number of slides.
-10. Iterate weak sections or slides before final delivery.
+3. **Write 3 art-direction concepts**: one-paragraph sketches of three deliberately different visual directions. Vary system choice (modern executive vs. editorial vs. comic), hero moment (data-led vs. type-led vs. image-led), and one signature device per concept (timeline rail, asymmetric grid, ribbon rule, etc.). Pick one. Justify in one line.
+4. Build a claim spine: one sharp claim per slide. Use the formula: **subject + verb + object + stake**. Avoid nominalizations; aim for claims that could stand alone as sentences. "I want clearer ownership so I can keep growing" instead of "Working Model Reflection."
+5. Plan content hierarchy before design: separate background/context, key updates, proof, decision points, risks, and asks so the visual weight matches the message.
+6. Choose design system and slide format library. Use `references/design-systems-and-formats.md` for professional styles, timelines, roadmaps, diagrams, comic panels, data stories, and source-library guidance.
+7. Plan slide formats with a **format variety budget**: identify the format families needed (cover, full-bleed type, data hero, card grid, timeline rail, quote spread, comic/storyboard, photo+caption, table, diagram). For a 7-slide deck, touch ≥4 distinct families. No two adjacent slides may share the same format family.
+8. Create a slide plan with title, claim, proof object, content hierarchy, slide format, visual treatment, and speaker intent for each slide.
+9. Generate or gather assets. For cute art, follow `references/art-direction.md`. For third-party templates, icons, illustrations, or photos, verify license terms and add a credits slide when required.
+10. Build the requested artifact. Default to one polished, self-contained HTML file for portfolios, visual stories, and presentation drafts unless the user requested PPTX.
+11. For HTML, verify the file exists, parses, has responsive layout rules, and contains no placeholder text.
+12. For PPTX, export a real `.pptx` file and verify it exists, is non-empty, and contains the expected number of slides.
+13. **Run a visual-critique pass**: assume you are a senior brand designer reviewing this deck. Name the three weakest slides. Pick one and describe a rewrite using a different format family from the format library.
+14. Iterate weak sections or slides before final delivery.
+15. If a reusable lesson emerged and the user wants the skill to keep learning, update the smallest relevant skill file or reference with anonymized guidance, then run the Skill Creator quick validator.
 
 ## HTML-First Delivery Rules
 
@@ -77,14 +86,15 @@ Generate PPTX only when the user explicitly asks for PowerPoint, slides, a deck,
 
 Every slide should have:
 
-- a headline that says the point
+- a headline that is a claim (subject + verb + object + stake), not a label
 - one primary proof object: chart, table, diagram, image, timeline, quote, artifact, or before/after
 - clear visual hierarchy
 - enough whitespace to make the point legible
 - no filler icons, generic card grids, or decorative charts
 
-The deck should pass three checks:
+The deck should pass four checks:
 
+- **format variety check**: the deck uses ≥4 distinct format families; no two adjacent slides share a layout family
 - thumbnail check: the deck has variety and a coherent visual rhythm
 - boss check: the point is obvious in ten seconds
 - editability check: text, shapes, charts, and layout remain practical to revise
