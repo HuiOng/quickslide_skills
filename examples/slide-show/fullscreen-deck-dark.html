@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Slide Show — Demo</title>
+<style>
+  :root {
+    --bg: #0f1020;
+    --slide-bg: #15172e;
+    --ink: #f4f4fb;
+    --muted: #a6a8c8;
+    --primary: #6c5ce7;
+    --accent: #00d2a8;
+    --accent-2: #ff7a59;
+    --stage-w: 1280px;
+    --stage-h: 720px;
+    --display: "Georgia", "Times New Roman", serif;
+    --body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; overflow: hidden; background: var(--bg); }
+  body { font-family: var(--body); color: var(--ink); }
+
+  #stage {
+    position: fixed; top: 50%; left: 50%;
+    width: var(--stage-w); height: var(--stage-h);
+    transform: translate(-50%, -50%) scale(1);
+    transform-origin: center center;
+  }
+  .slide {
+    position: absolute; inset: 0;
+    width: var(--stage-w); height: var(--stage-h);
+    background: var(--slide-bg);
+    padding: 72px 88px;
+    display: flex; flex-direction: column; justify-content: center;
+    opacity: 0; visibility: hidden;
+    transition: opacity .45s ease;
+    overflow: hidden;
+  }
+  .slide.is-active { opacity: 1; visibility: visible; }
+
+  .slide h1 { font-family: var(--display); font-size: 84px; line-height: 1.04; letter-spacing: -1px; }
+  .slide h2 { font-family: var(--display); font-size: 56px; line-height: 1.08; }
+  .slide p  { font-size: 26px; line-height: 1.5; color: var(--muted); max-width: 18em; margin-top: 22px; }
+  .eyebrow  { font-size: 18px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+
+  .blob { position: absolute; border-radius: 50%; filter: blur(2px); opacity: .5; }
+
+  #progress { position: fixed; top: 0; left: 0; height: 4px; width: 0%; background: var(--accent); z-index: 50; transition: width .3s ease; }
+  #counter { position: fixed; bottom: 18px; right: 22px; font-size: 14px; color: var(--muted); z-index: 50; font-variant-numeric: tabular-nums; }
+  .nav-btn { position: fixed; bottom: 14px; z-index: 50; width: 40px; height: 40px; border: none; border-radius: 50%;
+             background: rgba(255,255,255,.08); color: var(--ink); font-size: 20px; cursor: pointer; }
+  #prev { right: 108px; } #next { right: 62px; }
+  .nav-btn:hover { background: rgba(255,255,255,.18); }
+  #hint { position: fixed; bottom: 18px; left: 22px; font-size: 13px; color: var(--muted); z-index: 50; opacity: .8; }
+  .click-zone { position: fixed; top: 0; height: 100%; width: 18%; z-index: 40; cursor: pointer; }
+  #zone-prev { left: 0; } #zone-next { right: 0; }
+  @media print { #progress, #counter, .nav-btn, #hint, .click-zone { display: none; } }
+</style>
+</head>
+<body>
+  <div id="progress"></div>
+
+  <div id="stage">
+    <!-- 1: Cover -->
+    <section class="slide is-active">
+      <div class="blob" style="width:340px;height:340px;background:var(--primary);top:-80px;right:-60px;"></div>
+      <div class="blob" style="width:200px;height:200px;background:var(--accent);bottom:-60px;left:120px;"></div>
+      <span class="eyebrow">Slide Show skill</span>
+      <h1>HTML slides that<br/>actually present.</h1>
+      <p>One file. Opens fullscreen. Arrow keys, swipe, and a progress bar — no PowerPoint required.</p>
+    </section>
+
+    <!-- 2: Big statement -->
+    <section class="slide">
+      <h2 style="max-width:16em;">Each slide fills the screen. You move with <span style="color:var(--accent);">&larr; &rarr;</span> or a tap.</h2>
+    </section>
+
+    <!-- 3: Big number -->
+    <section class="slide" style="align-items:center;text-align:center;">
+      <h1 style="font-size:200px;color:var(--accent);line-height:1;">1</h1>
+      <p style="color:var(--ink);max-width:26em;">Self-contained file. No CDN, no dependencies, works offline from disk.</p>
+    </section>
+
+    <!-- 4: Two-column -->
+    <section class="slide" style="flex-direction:row;align-items:center;gap:56px;">
+      <div style="flex:1.4;">
+        <span class="eyebrow">Built for variety</span>
+        <h2>It asks your brand colors, then picks a bold theme.</h2>
+        <p>Never the same default twice. Your palette drives the whole look.</p>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:16px;">
+        <div style="background:var(--primary);height:54px;border-radius:12px;"></div>
+        <div style="background:var(--accent);height:54px;border-radius:12px;"></div>
+        <div style="background:var(--accent-2);height:54px;border-radius:12px;"></div>
+      </div>
+    </section>
+
+    <!-- 5: Inline-SVG chart -->
+    <section class="slide">
+      <span class="eyebrow">Inline SVG, no libraries</span>
+      <h2 style="margin-bottom:28px;">Charts are hand-built and themeable.</h2>
+      <svg width="900" height="300" viewBox="0 0 900 300" aria-label="bar chart">
+        <rect x="40"  y="200" width="120" height="100" rx="8" fill="var(--muted)"/>
+        <rect x="220" y="140" width="120" height="160" rx="8" fill="var(--primary)"/>
+        <rect x="400" y="80"  width="120" height="220" rx="8" fill="var(--accent)"/>
+        <rect x="580" y="40"  width="120" height="260" rx="8" fill="var(--accent-2)"/>
+        <text x="640" y="28" fill="var(--ink)" font-size="22" text-anchor="middle">peak</text>
+      </svg>
+    </section>
+
+    <!-- 6: Closing -->
+    <section class="slide" style="align-items:center;text-align:center;background:var(--primary);">
+      <h1 style="color:#fff;">Press <span style="color:var(--accent);">F</span> for fullscreen.</h1>
+      <p style="color:#ece9ff;">Then ask the skill to build yours.</p>
+    </section>
+  </div>
+
+  <div id="zone-prev" class="click-zone"></div>
+  <div id="zone-next" class="click-zone"></div>
+  <button id="prev" class="nav-btn" aria-label="Previous slide">&#8249;</button>
+  <button id="next" class="nav-btn" aria-label="Next slide">&#8250;</button>
+  <div id="counter">1 / 1</div>
+  <div id="hint">&larr; &rarr; navigate &middot; F fullscreen</div>
+
+<script>
+(function () {
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var stage = document.getElementById('stage');
+  var progress = document.getElementById('progress');
+  var counter = document.getElementById('counter');
+  var i = 0;
+
+  function clamp(n) { return Math.max(0, Math.min(slides.length - 1, n)); }
+
+  function show(n) {
+    i = clamp(n);
+    slides.forEach(function (s, idx) { s.classList.toggle('is-active', idx === i); });
+    counter.textContent = (i + 1) + ' / ' + slides.length;
+    progress.style.width = ((i + 1) / slides.length * 100) + '%';
+    history.replaceState(null, '', '#' + (i + 1));
+  }
+  function next() { show(i + 1); }
+  function prev() { show(i - 1); }
+
+  function fit() {
+    var s = Math.min(window.innerWidth / stage.offsetWidth, window.innerHeight / stage.offsetHeight);
+    stage.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
+  }
+
+  document.addEventListener('keydown', function (e) {
+    switch (e.key) {
+      case 'ArrowRight': case ' ': case 'PageDown': e.preventDefault(); next(); break;
+      case 'ArrowLeft': case 'Backspace': case 'PageUp': e.preventDefault(); prev(); break;
+      case 'Home': show(0); break;
+      case 'End': show(slides.length - 1); break;
+      case 'f': case 'F':
+        if (!document.fullscreenElement) { document.documentElement.requestFullscreen && document.documentElement.requestFullscreen(); }
+        else { document.exitFullscreen && document.exitFullscreen(); }
+        break;
+    }
+  });
+
+  document.getElementById('next').addEventListener('click', next);
+  document.getElementById('prev').addEventListener('click', prev);
+  document.getElementById('zone-next').addEventListener('click', next);
+  document.getElementById('zone-prev').addEventListener('click', prev);
+
+  var x0 = null;
+  document.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); }
+    x0 = null;
+  }, { passive: true });
+
+  window.addEventListener('resize', fit);
+
+  var params = new URLSearchParams(location.search);
+  var start = parseInt(params.get('slide') || location.hash.replace('#', ''), 10);
+  fit();
+  show(isNaN(start) ? 0 : start - 1);
+})();
+</script>
+</body>
+</html>
