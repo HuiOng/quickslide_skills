@@ -1,0 +1,6 @@
+interface:
+  display_name: "Slide Show"
+  short_description: "Fullscreen, navigable HTML slide decks"
+  default_prompt: "Use $slide-show to build a single fullscreen HTML presentation I can navigate with arrow keys. Ask me for my brand colors first, then pick a bold theme and make slides that look like a real deck."
+policy:
+  allow_implicit_invocation: true

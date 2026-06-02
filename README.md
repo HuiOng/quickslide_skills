@@ -1,146 +1,165 @@
-# Slide Storyteller
+# QuickSlide Skills
 
-`slide-storyteller` is a Codex skill for creating polished HTML presentation drafts and editable slide decks for work updates, beginner training, resumes, portfolio stories, leadership narratives, and playful visual explainers.
+A small suite of AI **skills** that turn rough notes into polished presentations — without stopping at an outline or a script.
 
-It is designed for people who want the final output, not a conversion chore. For broad storytelling and portfolio requests, the skill now defaults to a real HTML artifact first. When you explicitly ask for PowerPoint, it tells Codex to produce a real `.pptx`, verify it, and give you the file path first.
+The repo ships two complementary skills for [Codex](https://openai.com/codex/) and [Claude](https://claude.ai/code):
 
-## Why This Exists
+| Skill | What it makes | Best for |
+|---|---|---|
+| **[`slide-storyteller`](slide-storyteller/)** | Story-first HTML pages, and real editable PowerPoint (`.pptx`) | Resumes, portfolios, leadership narratives, updates someone reads on their own time, decks you'll keep editing in PowerPoint |
+| **[`slide-show`](slide-show/)** | A single self-contained HTML file that opens as a **fullscreen presentation** | Presenting live in the browser — a deck that *plays* with arrow keys, swipe, and a progress bar |
 
-Most AI slide attempts stop at an outline, a script, or a rough mockup. This skill pushes Codex toward a more useful workflow:
+Both are pure instruction skills (Markdown + small references). They require no build step and no runtime beyond your AI agent.
 
-- understand the audience and goal
-- write slide claims instead of topic labels
-- choose a visual system
-- build polished HTML presentation drafts by default
-- export an actual PowerPoint file when requested
-- verify the artifact before handing it back
+---
+
+## Which skill should I use?
+
+- **Presenting live, or want it to look and behave like PowerPoint/Keynote in a browser?** → `slide-show`. One file, opens fullscreen, navigate with `←` / `→`, space, or swipe.
+- **Sharing something people read on their own — a portfolio, resume, or written update?** → `slide-storyteller` (HTML story page).
+- **Need an editable `.pptx` to drop into a company template?** → `slide-storyteller` (PowerPoint mode).
+
+They're designed to hand off to each other: `slide-show` points users to `slide-storyteller` when they ask for PowerPoint, and vice-versa.
+
+---
 
 ## Install
 
-Clone or download this repository, then copy the skill folder into your Codex skills directory:
+Both skills work in **Codex** and **Claude Code**. Clone or download this repo, then copy the skill folders into your agent's skills directory.
+
+### Codex
 
 ```bash
 mkdir -p ~/.codex/skills
-cp -R slide-storyteller ~/.codex/skills/
+cp -R slide-storyteller slide-show ~/.codex/skills/
 ```
 
-Restart Codex or start a new session, then ask for the skill by name:
+Restart Codex or start a new session, then call a skill by name:
 
 ```text
-Use $slide-storyteller to create a 7-slide beginner training deck about using Codex and Claude Code well. Make it friendly, practical, and shareable with my team.
+Use $slide-show to build a fullscreen HTML deck from my notes. Ask me for my brand colors first.
 ```
+
+### Claude Code
+
+```bash
+mkdir -p ~/.claude/skills
+cp -R slide-storyteller slide-show ~/.claude/skills/
+```
+
+The skill triggers automatically when your request matches it — just describe what you want:
+
+```text
+Build me a fullscreen HTML presentation from these notes that I can present in the browser.
+```
+
+> **Tip:** keep each skill's `description` accurate — on Claude that text is what decides when the skill activates.
+
+---
+
+## `slide-show` — fullscreen HTML decks
+
+Builds **one self-contained `.html` file** that behaves like a real presentation:
+
+- one slide per screen; advance with `←` / `→`, space, `Home`/`End`, on-screen arrows, click zones, or touch swipe
+- a slide counter, a progress bar, and `F` to toggle true browser fullscreen
+- a **fixed-stage** layout (designed at 1280×720, scaled to any screen) so slides keep their alignment everywhere
+- everything inlined — CSS, JS, and SVG — so it works offline as a single shareable file
+
+It **asks for your brand colors up front** and deliberately varies the visual theme each time instead of defaulting to one look. For executive/strategy decks it can follow consulting-style discipline (pyramid structure, action titles, one message per slide).
+
+**Try the examples** (open in a browser):
+
+- [Fullscreen deck — dark theme](examples/slide-show/fullscreen-deck-dark.html)
+- [Fullscreen deck — light theme](examples/slide-show/fullscreen-deck-light.html)
+
+## `slide-storyteller` — story pages & PowerPoint
+
+Pushes the agent through a more useful workflow than "here's an outline":
+
+- understand the audience and goal
+- write slide *claims* instead of topic labels
+- choose a visual system and varied slide formats
+- build a polished HTML story by default, or export a real `.pptx` when asked
+- verify the artifact before handing it back
+
+**Examples:**
+
+- [Monthly AI Skills Update (HTML)](examples/monthly-ai-skills-update/index.html) — HTML-first story page
+- [AI Coding for Beginners (PPTX)](examples/ai-coding-for-beginners/ai-coding-for-beginners.pptx) — a real generated PowerPoint
+
+| Cover | Lesson Framework | Worked Example |
+|---|---|---|
+| ![Cover slide](examples/ai-coding-for-beginners/previews/slide-01.png) | ![Lesson framework](examples/ai-coding-for-beginners/previews/slide-03.png) | ![Worked example](examples/ai-coding-for-beginners/previews/slide-07.png) |
+
+### Design intelligence
+
+`slide-storyteller` separates each slide into two decisions — the **visual system** and the **slide format** — so the agent picks whether a slide needs a timeline, journey map, comic panel, annotated chart, decision matrix, or case-study proof object before making it pretty.
+
+Supported visual directions include modern executive, high-end editorial, Google/Material product decks, comic storyboard, data newsroom, and roadmap/timeline-heavy styles. Full guidance lives in [`design-systems-and-formats.md`](slide-storyteller/references/design-systems-and-formats.md).
+
+| Material Roadmap | High-End Editorial | Executive Brief | Data Story |
+|---|---|---|---|
+| ![Material roadmap](showcase/assets/material-roadmap.svg) | ![High-end editorial](showcase/assets/high-end-editorial.svg) | ![Executive brief](showcase/assets/executive-brief.svg) | ![Data story](showcase/assets/data-story.svg) |
+
+See the full visual gallery at [`showcase/index.html`](showcase/index.html).
+
+---
+
+## More example prompts
+
+```text
+Use $slide-show to turn this product roadmap into a fullscreen deck I can present on a big screen. Our colors are navy, white, and a coral accent.
+```
+
+```text
+Use $slide-storyteller to create a resume portfolio page from my experience. Make it polished and warm, with two case-study sections.
+```
+
+```text
+Use $slide-storyteller to turn these weekly notes into a short PowerPoint update for my manager. Keep it clear, honest, and decision-oriented.
+```
+
+---
+
+## Repository structure
+
+```
+slide-storyteller/      Story-first HTML + PPTX skill
+  SKILL.md              Main instructions
+  references/           Deck patterns, design systems, art direction, 1-on-1 guidance
+  agents/openai.yaml    Codex UI metadata
+slide-show/             Fullscreen HTML deck skill
+  SKILL.md              Main instructions
+  references/           Deck scaffold, themes & color, consulting-style discipline
+  agents/openai.yaml    Codex UI metadata
+examples/               Sample outputs (HTML, PPTX, slide-show demos)
+showcase/               Visual style gallery
+CLAUDE.md               Guidance for AI agents working in this repo
+```
+
+---
 
 ## Requirements
 
-This skill works best in Codex with access to the Presentations plugin/runtime. The skill can help with structure and story anywhere, but actual `.pptx` export depends on presentation tooling being available in the Codex environment.
+- An AI coding agent that supports skills (**Codex** or **Claude Code**).
+- For `.pptx` export with `slide-storyteller`, a presentation runtime such as `pptxgenjs` or your agent's presentation tooling.
+- `slide-show` has **no dependencies** — its output is a plain HTML file that opens in any browser.
 
-## Sample Deck Output
+---
 
-### HTML-first monthly update
+## Project status
 
-This HTML example shows the skill's newer default behavior: build a polished presentation draft first, then continue to PowerPoint only if requested.
+An early but useful prototype. Good current uses: live presentations, team learning decks, weekly/monthly updates, resume and portfolio stories.
 
-- [Monthly AI Skills Update HTML](examples/monthly-ai-skills-update/index.html)
+**Roadmap:**
 
-![Monthly AI skills update cover slide](examples/monthly-ai-skills-update/previews/slide-01.png)
+- more finished example decks per archetype (pitch, board update, training)
+- curated, brand-ready theme packs
+- a brand-kit intake (logo + colors + font → consistent palette)
+- richer before/after examples and a short walkthrough
 
-### PowerPoint example
-
-A real generated deck is included to show that the skill can produce an actual PowerPoint file, not just an outline:
-
-- [AI Coding for Beginners PPTX](examples/ai-coding-for-beginners/ai-coding-for-beginners.pptx)
-
-These previews are sample slide content from that beginner training deck. They are not the design format library.
-
-| Cover Slide | Lesson Framework | Worked Example |
-|---|---|---|
-| ![AI coding deck cover](examples/ai-coding-for-beginners/previews/slide-01.png) | ![Lesson framework slide](examples/ai-coding-for-beginners/previews/slide-03.png) | ![Worked example slide](examples/ai-coding-for-beginners/previews/slide-07.png) |
-
-## Design Intelligence
-
-The skill now separates slide design into two decisions: the visual system and the slide format. That means Codex should choose whether a slide needs a timeline, journey map, comic panel, annotated chart, decision matrix, roadmap, process flow, or case-study proof object before making it pretty.
-
-Supported visual directions include:
-
-- modern executive and high-end editorial
-- Google/Material-inspired product and training decks
-- comic storyboard and cute professional explainers
-- data newsroom and analytics readouts
-- graphic poster, workshop canvas, roadmap, and timeline-heavy decks
-
-The design and source guidance lives in [design-systems-and-formats.md](slide-storyteller/references/design-systems-and-formats.md).
-
-These lightweight previews show the kinds of deck styles the skill is meant to guide.
-
-| Material Roadmap | Comic Storyboard |
-|---|---|
-| ![Material roadmap slide preview](showcase/assets/material-roadmap.svg) | ![Comic storyboard slide preview](showcase/assets/comic-storyboard.svg) |
-
-| High-End Editorial | Modern Data Product |
-|---|---|
-| ![High-end editorial slide preview](showcase/assets/high-end-editorial.svg) | ![Modern product data slide preview](showcase/assets/modern-data-product.svg) |
-
-| Executive Brief | Cute Learning |
-|---|---|
-| ![Executive brief slide preview](showcase/assets/executive-brief.svg) | ![Cute learning slide preview](showcase/assets/cute-learning.svg) |
-
-| Data Story | Resume Portfolio |
-|---|---|
-| ![Data story slide preview](showcase/assets/data-story.svg) | ![Resume portfolio slide preview](showcase/assets/resume-portfolio.svg) |
-
-| Weekly Update | Storybook Explainer |
-|---|---|
-| ![Weekly update slide preview](showcase/assets/weekly-update.svg) | ![Storybook explainer slide preview](showcase/assets/storybook-explainer.svg) |
-
-You can also open the visual gallery at [showcase/index.html](showcase/index.html).
-
-## More Example Prompts
-
-```text
-Use $slide-storyteller to turn these weekly notes into a short update deck for my boss. Keep it clear, honest, and decision-oriented.
-```
-
-```text
-Use $slide-storyteller to create a resume portfolio deck from my experience. Make it polished and warm, with 2 case-study slides.
-```
-
-```text
-Use $slide-storyteller to create a playful onboarding deck that teaches non-technical teammates how to brief an AI coding agent.
-```
-
-## Skill Contents
-
-- [slide-storyteller/SKILL.md](slide-storyteller/SKILL.md): main Codex instructions
-- [deck-patterns.md](slide-storyteller/references/deck-patterns.md): reusable deck structures
-- [art-direction.md](slide-storyteller/references/art-direction.md): guidance for cute but professional art
-- [design-systems-and-formats.md](slide-storyteller/references/design-systems-and-formats.md): professional design systems, slide formats, and free-source guidance
-- [showcase/index.html](showcase/index.html): design gallery
-
-## Project Status
-
-This is an early prototype, but it is useful enough to share.
-
-Good current uses:
-
-- personal slide experiments
-- team learning decks
-- weekly updates
-- resume or portfolio story drafts
-- beginner-friendly Codex skill examples
-
-Not yet perfect:
-
-- It has one bundled example deck, not a full template library.
-- Results depend on the local Codex presentation runtime.
-- Brand-specific decks still need user-provided brand assets and source material.
-
-## Recommended Next Improvements
-
-- Add more real `.pptx` examples.
-- Add richer before/after examples for modern, comic, Google/Material, and executive decks.
-- Add a short video or GIF walkthrough.
-- Add a troubleshooting section for environments without PPTX export.
-- Add optional company brand template examples.
+Contributions and feedback are welcome — open an issue or a pull request.
 
 ## License
 
