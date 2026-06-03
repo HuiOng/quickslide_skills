@@ -73,6 +73,14 @@ It **asks for your brand colors up front** and deliberately varies the visual th
 - [Fullscreen deck — dark theme](examples/slide-show/fullscreen-deck-dark.html)
 - [Fullscreen deck — light theme](examples/slide-show/fullscreen-deck-light.html)
 
+| Dark — Cover | Dark — Big Number | Dark — Themeable Chart |
+|---|---|---|
+| ![Dark cover slide](examples/slide-show/previews/dark-01-cover.png) | ![Dark big-number slide](examples/slide-show/previews/dark-03-number.png) | ![Dark chart slide](examples/slide-show/previews/dark-05-chart.png) |
+
+| Light — Cover | Light — Two-Column | Light — Closing |
+|---|---|---|
+| ![Light cover slide](examples/slide-show/previews/light-01-cover.png) | ![Light two-column slide](examples/slide-show/previews/light-04-twocol.png) | ![Light closing slide](examples/slide-show/previews/light-06-closing.png) |
+
 ## `slide-storyteller` — story pages & PowerPoint
 
 Pushes the agent through a more useful workflow than "here's an outline":
