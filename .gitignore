@@ -2,3 +2,7 @@
 outputs/
 output/
 node_modules/
+
+# Local pptxgenjs demo — contains an internal product name and an absolute
+# /Users path; keep it out of the public repo.
+create-deck.js
